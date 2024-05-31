@@ -1,1 +1,245 @@
-Hello world!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Go</title>
+    <link rel="stylesheet" href="MuseumGO.css">
+</head>
+<body>
+  <header>
+    <h1><a href="MuseumGO.html">MUSEUM GO</a></h1>
+    <a href="Events.html">EVENTS</a>
+    <a href="AboutUS.html">ABOUT US</a>
+    <a href="Contact.html">CONTACT</a>
+  </header>
+  <section class="page1">
+    <div id="maps">
+      <div style="list-style:none; transition: none;overflow:hidden;width:100%;height:100%;">
+        <div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;">
+          <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/search?q=museum&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+        </div>
+      </div>
+    </div>
+    <div id="musea">
+      <div id="col1">
+
+      </div>
+      <div id="col2">
+
+      </div>
+    </div>
+  </section>
+  <section class="page2">
+    <h1>"What would happen if the Pokemon Go experience would be combined with the of Museums?"</h1>
+  </section>
+  <section class="page3">
+    <div class="left">
+      <div id="platform">
+        <div id="platform_android"></div>
+        <div id="platform_ios"></div>
+      </div>
+      <div id="platform_about">
+        <p>Augmented Reality (AR) has the potential to transform museum experiences, much like how Pokémon Go captivated
+            millions of users. Let’s explore how museums can leverage AR to enhance visitor engagement and understanding:
+            <br><br>
+            1. Interactive Exhibits: Museums can use AR to superimpose digital information onto physical exhibits. When
+            visitors point their smartphones or AR-enabled devices at an artifact, they receive additional context.
+            <br><br>
+            2. Scavenger Hunts and Exploration
+            <br><br>
+            3. Augmented Storytelling
+            <br><br>
+            4. Architectural Insights
+            <br><br>
+            5. Collaborative Experiences
+          </p>
+      </div>
+      <div id="platform_img">
+
+      </div>
+    </div>
+
+
+
+
+
+<!--      <div id="platform">-->
+<!--        <div id="andriod"></div>-->
+<!--        <div id="ios"></div>-->
+<!--        <div id="games">-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div id="phone"></div>-->
+<!--    </div>-->
+    <div class="right">
+      <div id="mode1">
+        <div class="flyer_img"></div>
+        <div class="flyer_info">
+          <p>We’ve crafted a unique gaming experience that blends the thrill of trivia with the magic of indoor location technology. Our prototype game is designed to awaken your curiosity and challenge your knowledge by providing trivia questions based on the very location you’re in. <br><br>
+          Our game is more than just entertainment; it’s a learning journey that encourages you to observe and appreciate the details of your environment. With each correct answer, you’ll not only score points but also gain insights into the stories and facts that make each location unique.</p>
+        </div>
+        <div class="flyer_bt">
+          <button onclick="location.href='games/Trivia.html';">learn more</button>
+        </div>
+      </div>
+      <div id="mode2">
+        <div class="flyer_img"></div>
+        <div class="flyer_info">
+          <p>It’s a thrilling pursuit for hidden treasures within your world. Our prototype game ingeniously integrates indoor location technology to guide you to specific objects waiting to be discovered.<br><br>
+          As you collect treasures, you’ll earn points, unlock achievements, and climb the leaderboard. But the real reward? The sense of accomplishment from cracking the code and locating the hidden gems.<br><br>
+          Prepare to step into a world of mystery and excitement, where your next great discovery is just around the corner!</p>
+        </div>
+        <div class="flyer_bt">
+          <button onclick="location.href='games/Hunting.html';">learn more</button>
+        </div>
+      </div>
+      <div id="mode3">
+        <div class="flyer_img"></div>
+        <div class="flyer_info">
+          <p>Our puzzle game transforms every indoor location into a jigsaw puzzle. Using state-of-the-art indoor location technology, our game detects objects in your vicinity and turns them into engaging puzzles for you to solve. <br><br>
+          This isn’t just about putting pieces together; it’s about paying attention to the details around you. The better you know your surroundings, the quicker you’ll solve the puzzles and uncover the beauty in everyday objects. <br><br>
+          With each completed puzzle, you’ll earn points and achievements. Challenge friends, beat high scores, and become a PuzzlePlace champion.</p>
+        </div>
+        <div class="flyer_bt">
+          <button onclick="location.href='games/Puzzle.html';">learn more</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="pagina4">
+    <div id="collabs">
+      <h1>OUR COLLABORATIONS:</h1>
+    </div>
+    <div id="sliders">
+      <div id="slider1a">
+        <div class="slider-top"></div>
+        <div class="slider-top"></div>
+        <div class="slider-top"></div>
+        <div class="slider-top"></div>
+      </div>
+      <div id="slider1b">
+        <div class="slider-top"></div>
+        <div class="slider-top"></div>
+        <div class="slider-top"></div>
+        <div class="slider-top"></div>
+      </div>
+      <div id="slider2a">
+        <div class="slider-bot"></div>
+        <div class="slider-bot"></div>
+        <div class="slider-bot"></div>
+        <div class="slider-bot"></div>
+      </div>
+      <div id="slider2b">
+        <div class="slider-bot"></div>
+        <div class="slider-bot"></div>
+        <div class="slider-bot"></div>
+        <div class="slider-bot"></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<style>
+  #pagina4{
+    height: 100%;
+    overflow: hidden;
+  }
+  #collabs{
+    display: flex;
+    font: var(--main-font-cite);
+    height: 30%;
+  }
+  #collabs > h1{
+    color: var(--txt-top-color);
+    text-shadow: 2px 2px 0 var(--txt-back-color);
+    margin: auto;
+  }
+  #sliders{
+    height: 70%;
+    display: grid;
+    overflow: hidden;
+  }
+  #sliders > *{
+    height: 30%;
+    width: 100%;
+    margin-left: 100%;
+    position: absolute;
+    display: flex;
+  }
+  #slider2a,#slider2b {
+    margin-top: 15%;
+  }
+
+  .slider-top,.slider-bot{
+    width: 10%;
+    aspect-ratio: 1/1;
+    background-image: url("images/android.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: auto;
+  }
+
+  @keyframes moveitbaby{
+    0%{margin-left: 100%;}
+    100%{margin-left: -100%;}
+  }
+
+  #slider1a,#slider1b,#slider2a,#slider2b{
+    animation-name: moveitbaby;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+  #slider1b{animation-delay: calc(30s/2);}
+  #slider2a{animation-delay: calc(30s/16)}
+  #slider2b{animation-delay: calc(30s/16 + 30s/2)}
+</style>
+
+<script type="module">
+  import { getAllActivities } from '/website/hotelgrabber.js';
+
+  const activities =  await getAllActivities('eindhoven');
+
+  function html_element(name,score='',about='') {
+    score = Math.floor(Math.random() * 9 + 1);
+    about = 'here is the grabbed general info presented';
+
+    return `<div className='MuseumLogo'></div>\
+            <div className='MuseumAbout'>\
+              <h1><span className='MuseumName'>${name}</span></h1>\
+              <p>Crowdedness-score: ${score}/10</p>\
+              <p>${about}</p>\
+            </div>`
+  }
+
+  const museums_nav1 = document.getElementById('col1');
+  const museums_nav2 = document.getElementById('col2');
+
+  let counter = 0;
+
+  for (let key in activities){
+    let activity;
+
+    try {
+      activity = activities[key].toLowerCase();
+      if (activity.includes('museum')){
+         const mus = document.createElement('div');
+         mus.classList.add('mus');
+         mus.innerHTML = html_element(activity);
+
+       if (counter < 1){
+          museums_nav1.appendChild(mus);
+          counter++;
+        }else{
+          museums_nav2.appendChild(mus);
+          counter = 0;
+        }
+      }
+
+    }catch (error) {console.log(error);}
+    }
+</script>
