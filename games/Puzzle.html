@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle SIM</title>
+    <link rel="stylesheet" href="Puzzle.css">
+    <script type = "text/javascript" src="Puzzle.js"></script>
+</head>
+<body>
+  <header>
+        <h1><a href="../MuseumGO.html">MUSEUM GO</a></h1>
+        <a href="../MuseumGO.html#mode1">BACK</a>
+  </header>
+  <section id="page1">
+    <div id="left">
+      <canvas id="museum"></canvas>
+    </div>
+    <div id="right">
+      <section id="tablet">
+        <div id="speaker"></div>
+        <div id="screen">
+          <div id="screen_content">
+            <div id="screen_cont_top">
+              <div id="logo"></div>
+              <h1 id="puzzle_title">Recreate: </h1>
+            </div>
+            <div id="screen_cont_mid">
+                <div id="puzzle_canvas">
+                </div>
+            </div>
+            <div id="screen_cont_bot">
+                <button id="prev" onclick="nextPUZ()">PREVIOUS</button>
+                <button id="next" onclick="prevPUZ()">NEXT</button>
+            </div>
+          </div>
+        </div>
+        <div id="button"></div>
+      </section>
+    </div>
+  </section>
+</body>
+
+
+<script>
+    let canvas = document.getElementById("museum");
+    let ctx = canvas.getContext("2d");
+
+    function target(){
+          let targetX = Math.round(Math.random() * canvas.width);
+          let targetY = Math.round(Math.random() * canvas.height);
+
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "red";
+          ctx.fillRect(targetX-5, targetY-5, 5, 5);
+    }
+
+
+    createPuzzle(2);
+    hussle(2);
+    target();
+
+</script>

@@ -1,0 +1,369 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Trivia SIM</title>-->
+
+<!--  <style>-->
+<!--    body {-->
+<!--      display: flex;-->
+<!--      justify-content: space-between;-->
+<!--      align-items: center;-->
+<!--      height: 100vh;-->
+<!--      margin: 0;-->
+<!--    }-->
+<!--    .display{-->
+<!--      width: 60%;-->
+<!--      height: 80%;-->
+<!--      border: 1px solid black;-->
+<!--      margin: auto;-->
+<!--      text-align: center;-->
+<!--    }-->
+<!--    .stats{-->
+<!--      width: 20%;-->
+<!--      height: 80%;-->
+<!--      border: 1px solid black;-->
+<!--      margin: auto;-->
+<!--      text-align: center;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--  <div class="display">-->
+<!--    <div class="pictures"></div>-->
+
+<!--  </div>-->
+<!--  <div class="stats">-->
+<!--    <p>You are at: <span id="room"></span></p>-->
+<!--    <p>Your score is: <span id="score"></span></p>-->
+<!--    <button id="nextQ" onclick="NewQuestion()">Next Question</button>-->
+<!--    <button id="RandomRoom" onclick="NewRoom()">New Room</button>-->
+<!--  </div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<script>-->
+<!--  let Q;-->
+<!--  let Room;-->
+<!--  const QCanvas = document.getElementsByClassName("display")[0];-->
+<!--  const Museum_lib = {-->
+<!--        // place name: [lat, lon]-->
+<!--        // [3] [4] [5]-->
+<!--        // [2] [8] [6]-->
+<!--        // [1] [entrance] [7]-->
+<!--        'entrance': [51.43442602799476, 5.481777034366868, ["vanabben.png","museumbackground.png","arrow.png"]],-->
+<!--        'room1': [51.43449496429616, 5.481704216929575, ["vanabben.png","museumbackground.png","arrow.png"]],-->
+<!--        'room2': [51.43460866784703, 5.481743108958766, ["vanabben.png","museumbackground.png","arrow.png"]],-->
+<!--        'room3': [51.43471401059015, 5.481845032897336, ["vanabben.png","museumbackground.png","arrow.png"]],-->
+<!--        'room4':[51.43466050319544, 5.482022058685378, ["vanabben.png","museumbackground.png","arrow.png"]],-->
+<!--        'room5':[51.43458693042537, 5.482231270980336, ["vanabben.png","museumbackground.png","arrow.png"]],-->
+<!--        'room6':[51.434468210478336, 5.482142758086315, ["vanabben.png","museumbackground.png","arrow.png"]],-->
+<!--        'room7':[51.43436621140422, 5.482032787521017, ["vanabben.png","museumbackground.png","arrow.png"]],-->
+<!--        'room8':[51.43454763582916, 5.481926840269082, ["vanabben.png","museumbackground.png","arrow.png"]]-->
+<!--    };-->
+<!--  function NewQuestion(){-->
+<!--    const Q_types = [0,1,2,3,4,5,6]-->
+<!--    const random = Math.floor(Math.random() * Q_types.length);-->
+
+<!--    Q = Q_types[random];-->
+<!--    QShow();-->
+<!--  }-->
+<!--  function NewRoom() {-->
+<!--    const keys = Object.keys(Museum_lib);-->
+<!--    const random = Math.floor(Math.random() * keys.length);-->
+<!--    const RoomName = keys[random];-->
+<!--    document.getElementById("room").innerHTML = RoomName;-->
+<!--    QShow();-->
+<!--  }-->
+<!--  function QShow(){-->
+<!--    let structure;-->
+<!--    QCanvas.innerHTML = "";-->
+
+<!--    if(Q==0){-->
+<!--      structure = ShowQ1("Is dit de vraag?","a","b","c","d");-->
+<!--    }-->
+<!--    if(Q==1){-->
+<!--      structure = ShowQ2();-->
+<!--    }-->
+<!--    if(Q==2){-->
+<!--      structure = ShowQ3();-->
+<!--    }-->
+<!--    if(Q==3){-->
+<!--      structure = ShowQ4();-->
+<!--    }-->
+<!--    if(Q==4){-->
+<!--      structure = ShowQ5();-->
+<!--    }-->
+<!--    if(Q==5){-->
+<!--      structure = ShowQ6();-->
+<!--    }-->
+<!--    if(Q==6){-->
+<!--      structure = ShowQ7();-->
+<!--    }-->
+
+<!--    QCanvas.innerHTML = structure;-->
+<!--  }-->
+
+<!--  function ShowQ1(question,a,b,c,d){-->
+<!--    let structure = `<div className="choice">\-->
+<!--                      <h1>${question}</h1>\-->
+<!--                      <button id="${a}">${a}</button>\-->
+<!--                      <button id="${b}">${b}</button>\-->
+<!--                      <button id="${c}">${c}</button>\-->
+<!--                      <button id="${d}">${d}</button>\-->
+<!--                    </div>`;-->
+<!--    return structure;-->
+<!--  }-->
+<!--  function ShowQ2(question){-->
+<!--    let structure = `<div class="answer">\-->
+<!--                      <h1>${question}</h1>\-->
+<!--                      <input type="text">\-->
+<!--                      <button>submit</button>\-->
+<!--                     </div>`;-->
+<!--    return structure;-->
+<!--  }-->
+<!--  function ShowQ3(question,a,b){-->
+<!--    let structure = `<div class="TrueFalse">\-->
+<!--                      <h1>${question}</h1>\-->
+<!--                      <button id="${a}">True</button>\-->
+<!--                      <button id="${b}">False</button>\-->
+<!--                    </div>`;-->
+<!--    return structure;-->
+<!--  }-->
+<!--  function ShowQ4(question,a){-->
+<!--    let structure = `<div class="estimate">\-->
+<!--                      <h1>${question}</h1>\-->
+<!--                      <input type="range" id="${a}">\-->
+<!--                      <button>submit</button>\-->
+<!--                    </div>`;-->
+<!--    return structure;-->
+<!--  }-->
+<!--  function ShowQ5(question,a,b,c,d){-->
+<!--    let structure = `<div class="blankspace">\-->
+<!--                        <h1>${question}</h1>\-->
+<!--                        <button id="${a}">${a}</button>\-->
+<!--                        <button id="${b}">${b}</button>\-->
+<!--                        <button id="${c}">${c}</button>\-->
+<!--                        <button id="${d}">${d}</button>\-->
+<!--                      </div>`;-->
+<!--    return structure;-->
+<!--  }-->
+<!--  function ShowQ6(question){-->
+<!--      let structure = `<div class="matching">-->
+<!--                        <h1>${question}</h1>-->
+<!--                        <p>dragg and drop matches</p>-->
+<!--                      </div>`;-->
+<!--      return structure;-->
+<!--    }-->
+
+<!--  function ShowQ7(question,url1,url2,id1,id2){-->
+<!--    let structure = `<h1>${question}</h1>\-->
+<!--          <button><img src=${url1}><span id=${id1}>${id2}</span></button>\-->
+<!--          <button><img src=${url2}><span id=${id1}>${id2}</span></button>`;-->
+<!--    return structure;-->
+<!--  }-->
+
+
+<!--</script>-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle SIM</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #museum{
+            width: 35%;
+            height: 80%;
+            border: 1px solid black;
+            margin: auto;
+            background-image: url("../../vanabben.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .display{
+            width: 40%;
+            height: 80%;
+            border: 1px solid black;
+            margin: auto;
+            position: relative;
+        }
+        .puzzle-piece{
+            position: absolute;
+            border: 1px solid #000;
+            background-repeat: no-repeat;
+            border-collapse: collapse;
+        }
+        .info{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="museum"></canvas>
+    <div id="stats">
+        <button onclick="addTiles()">Add Tiles</button><br><br>
+        <button onclick="removeTiles()">Remove Tiles</button><br><br>
+        <button onclick="RandomRoom()">Random room</button>
+        <p>You are at: <span id="location"></span></p>
+        <p>You are looking at: <span id="artwork"></span></p>
+    </div>
+    <div class="display">
+    </div>
+
+</body>
+</html>
+
+<script>
+    let ImageURLS,ImageURL,RoomCords;
+    let targetX,targetY;
+    let Size = 4;
+    let canvas = document.getElementById("museum");
+    let ctx = canvas.getContext("2d");
+
+    const Museum_lib = {
+        // place name: [lat, lon]
+        // [3] [4] [5]
+        // [2] [8] [6]
+        // [1] [entrance] [7]
+        'entrance': [51.43442602799476, 5.481777034366868, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]],
+        'room1': [51.43449496429616, 5.481704216929575, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]],
+        'room2': [51.43460866784703, 5.481743108958766, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]],
+        'room3': [51.43471401059015, 5.481845032897336, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]],
+        'room4':[51.43466050319544, 5.482022058685378, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]],
+        'room5':[51.43458693042537, 5.482231270980336, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]],
+        'room6':[51.434468210478336, 5.482142758086315, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]],
+        'room7':[51.43436621140422, 5.482032787521017, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]],
+        'room8':[51.43454763582916, 5.481926840269082, ["../../vanabben.png","../../museumbackground.png","../../arrow.png"]]
+    };
+    const Area_cords_lib= {
+    'x0': [51.434020336353754, 5.481282211904873],
+    'y1': [51.4349567198379, 5.482827164168488]
+    };
+    function RandomRoom(){
+        const keys = Object.keys(Museum_lib);
+        const random = Math.floor(Math.random() * keys.length);
+        const RoomName = keys[random];
+
+        ImageURLS = Museum_lib[RoomName].slice(-1)[0];
+        RoomCords = [Museum_lib[RoomName][0], Museum_lib[RoomName][1]];
+        [targetX,targetY] = scale(RoomCords);
+
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+        ctx.fillStyle = "red";
+        ctx.fillRect(targetX-5, targetY-5, 5, 5);
+        document.getElementById("location").innerHTML = RoomName;
+
+        ImagePicker();
+    }
+    function ImagePicker(){
+        const random = Math.floor(Math.random() * ImageURLS.length);
+        ImageURL = ImageURLS[random];
+        document.getElementById("artwork").innerHTML = ImageURL.slice(0,(ImageURL.length-4));
+        createPuzzle()
+        hussle(Size);
+    }
+    function scale(Locations){
+        const lat_diff = Area_cords_lib['y1'][0]-Area_cords_lib['x0'][0];
+        const lon_diff = Area_cords_lib['y1'][1]-Area_cords_lib['x0'][1];
+
+        const x = (Locations[0]-Area_cords_lib['x0'][0])/(lat_diff/canvas.width)+0;
+        const y = (Locations[1]-Area_cords_lib['x0'][1])/(lon_diff/canvas.height)+0;
+
+        return [x,y];
+    }
+    function createPuzzle(PuzzleSize=4){
+        let container = document.getElementsByClassName('display');
+        container[0].innerHTML = '';
+        const new_width = container[0].clientWidth / PuzzleSize;
+        const new_height = container[0].clientHeight / PuzzleSize;
+
+        for (let i = 0; i < PuzzleSize**2; i++){
+            const piece = document.createElement('div');
+            piece.classList.add('puzzle-piece');
+            piece.setAttribute('id',`cel${i}`);
+            piece.addEventListener('mousedown', startDrag);
+            piece.addEventListener('mouseup', stopDrag);
+
+            piece.style.backgroundImage = `url(${ImageURL})`
+            piece.style.backgroundSize = `${container[0].clientWidth}px ${container[0].clientHeight}px`;
+            piece.style.backgroundPosition = `${i%PuzzleSize * -new_width}px ${Math.floor(i/PuzzleSize) * -new_height}px`;
+            piece.style.width = `${new_width}px`;
+            piece.style.height = `${new_height}px`;
+            piece.style.top = Math.floor(i/PuzzleSize)*new_height + 'px';
+            piece.style.left = i%PuzzleSize*new_width + 'px';
+
+            container[0].appendChild(piece);
+        }
+    }
+    function hussle(PuzzleSize){
+        const pieces = document.getElementsByClassName('puzzle-piece');
+        let tops = [];
+        let lefts = [];
+        let array = [];
+
+        for (let i = 0; i < PuzzleSize**2; i++){
+            tops.push(pieces[i].style.top);
+            lefts.push(pieces[i].style.left);
+            array.push(i);
+        }
+
+        const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+
+        for (let j = 0; j < PuzzleSize**2;j++){
+            pieces[j].style.top = tops[shuffledArray[j]];
+            pieces[j].style.left = lefts[shuffledArray[j]];
+        }
+    }
+    function startDrag(e) {
+        this.style.zIndex = 1;
+        this.style.cursor = 'grabbing';
+        this.dx = e.clientX - this.offsetLeft;
+        this.dy = e.clientY - this.offsetTop;
+        this.moveHandler = movePiece.bind(this);
+        document.addEventListener('mousemove', this.moveHandler);
+    }
+    function movePiece(e) {
+        this.style.left = e.clientX - this.dx + 'px';
+        this.style.top = e.clientY - this.dy + 'px';
+    }
+    function stopDrag() {
+        this.style.zIndex = 0;
+        this.style.cursor = 'grab';
+        document.removeEventListener('mousemove', this.moveHandler);
+    }
+    function addTiles(){
+          if (Size < 10){
+              Size++;
+              createPuzzle(Size);
+              hussle(Size);
+          }
+    }
+    function removeTiles(){
+        if (Size > 1){
+            Size--;
+            createPuzzle(Size);
+            hussle(Size);
+        }
+    }
+
+    RandomRoom();
+</script>
+
+
+
+
+

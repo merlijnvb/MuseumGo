@@ -1,0 +1,225 @@
+@import url("../Main.css");
+
+header{
+    width: inherit;
+    height: 30%;
+    display: flex;
+  }
+header > h1{
+    margin: auto;
+}
+header > a{
+    margin: auto;
+}
+
+#trivia{
+    width: inherit;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+    background-color: var(--main-col3);
+}
+.choice{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-areas: "X Y"
+                         "A B"
+                         "C D";
+}
+#IMG{
+    width: 100%;
+    height: 80%;
+    grid-area: X;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#TXT{
+    width: 100%;
+    height: 80%;
+    grid-area: Y;
+    margin: auto;
+    display: flex;
+}
+
+
+#TXT > h1{
+    text-align: center;
+    font: var(--main-font-txt);
+    color: var(--main-col1);
+    margin: auto;
+}
+.choice > button{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 12px;
+    font: var(--main-font-txt-small);
+    cursor: pointer;
+}
+.choice > button:nth-child(2) {
+    grid-area: A;
+}
+.choice > button:nth-child(3) {
+    grid-area: B;
+}
+.choice > button:nth-child(4) {
+    grid-area: C;
+}
+.choice > button:nth-child(5) {
+    grid-area: D;
+}
+.answer{
+    width: 60%;
+    height: 100%;
+    display: grid;
+    margin: auto;
+}
+.answer > *{
+    margin: auto;
+}
+.answer > h1{
+    color: var(--main-col1);
+    font: var(--main-font-txt);
+}
+.answer > button{
+    width: 25%;
+    height: 25%;
+    border-radius: 12px;
+    font: var(--main-font-txt-small);
+    cursor: pointer;
+}
+.answer > input{
+    width: 50%;
+    height: 25%;
+    border: unset;
+    border-radius: 12px;
+    font: var(--main-font-txt-small);
+    padding: 0 5%;
+}
+.TrueFalse{
+    width: 60%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "T T"
+                         "A B";
+    margin: auto;
+}
+.TrueFalse > *{
+    margin: auto;
+}
+.TrueFalse > h1{
+    color: var(--main-col1);
+    font: var(--main-font-txt);
+    grid-area: T;
+}
+.TrueFalse > button{
+    width: 25%;
+    height: 25%;
+    border-radius: 12px;
+    font: var(--main-font-txt-small);
+    cursor: pointer;
+}
+.estimate{
+    width: 60%;
+    height: 100%;
+    display: grid;
+    margin: auto;
+}
+.estimate > *{
+    margin: auto;
+}
+.estimate > h1{
+    color: var(--main-col1);
+    font: var(--main-font-txt);
+}
+.estimate > button{
+    width: 25%;
+    height: 25%;
+    border-radius: 12px;
+    font: var(--main-font-txt-small);
+    cursor: pointer;
+}
+.estimate > input{
+    width: 50%;
+}
+.estimate > input::-webkit-slider-runnable-track{
+    background-color: var(--main-col1);
+    border-radius: 60px;
+}
+.estimate > input::-webkit-slider-thumb {
+    cursor: ew-resize;
+}
+.blankspace{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-areas: "T T"
+                         "A B"
+                         "C D";
+}
+.blankspace > h1{
+    text-align: center;
+    font: var(--main-font-txt);
+    color: var(--main-col1);
+    margin: 10% 0;
+    grid-area: T;
+}
+.blankspace > button{
+    width: 50%;
+    aspect-ratio: 2/1;
+    margin: auto;
+    border-radius: 12px;
+    font: var(--main-font-txt-small);
+    cursor: pointer;
+}
+.blankspace > button:nth-child(2) {
+    grid-area: A;
+}
+.blankspace > button:nth-child(3) {
+    grid-area: B;
+}
+.blankspace > button:nth-child(4) {
+    grid-area: C;
+}
+.blankspace > button:nth-child(5) {
+    grid-area: D;
+}
+
+.matching{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+}
+.matching > *{
+    text-align: center;
+    font: var(--main-font-txt-small);
+    color: var(--main-col1);
+    margin: auto;
+}
+
+.pictures{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-areas: "T T"
+                         "A B";
+}
+.pictures > h1{
+    text-align: center;
+    font: var(--main-font-txt);
+    color: var(--main-col1);
+    margin: auto;
+    grid-area: T;
+}
+.pictures > button{
+    width: 90%;
+    height: 90%;
+    margin: auto;
+}

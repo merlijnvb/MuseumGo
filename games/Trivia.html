@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trivia Game</title>
+  <link rel="stylesheet" href="Trivia.css">
+  <script type = "text/javascript" src="Trivia.js"></script>
+</head>
+<body>
+  <header>
+        <h1><a href="../MuseumGO.html">MUSEUM GO</a></h1>
+        <a href="../MuseumGO.html#mode1">BACK</a>
+  </header>
+  <section id="trivia">
+
+  </section>
+</body>
+</html>
+<script>
+    let Q_nr = 0;
+
+    let questions = {0:[0,{'Q':"What influence did the Surrealist movement have on Miró's approach to art, such as in 'Composition avec des cordes (1950)'? It encouraged him to:",
+                       'a':'A: combine symbolism and surreal images into his works of art.',
+                       'b':'B: examine the subconscious and methods of instinctive sketching.',
+                       'c':'C: give up on following conventional creative norms and embrace spontaneity.',
+                       'd':'D: explore the limits of what is possible to imagine and what is real in his artistic creations.',
+                       'img':"../images/kunst1.jpg"}],
+                 1:[0,{'Q':"What is the main concept behind 'Ship of Tolerance' (2006) by Ilya and Emelia Kabakov? ",
+                       'a':'A: to re-create classic sailing ships.',
+                       'b':'B: to use art to raise awareness of environmental issues.',
+                       'c':'C: to promote understanding and cultural interchange amongst kids from different origins.',
+                       'd':'D: to commemorate ancient maritime traditions.',
+                       'img':"../images/kunst2.jpg"}],
+                 2:[0,{'Q':"How does the drawing style of the artist of 'Models' (1994), Marlene Dumas, differ from usual drawing techniques?",
+                       'a':'A: She uses paintings and photos as sources, concentrating on how society views things.',
+                       'b':'B: She prioritizes evoking general feelings rather than precise physical detail.',
+                       'c':'C: The portraits question accepted notions of beauty.',
+                       'd':'D: She shows a variety of women, emphasizing the diversity of identities.',
+                       'img':"../images/kunst3.jpg"}]};
+
+    let corr = Math.round(Math.random() * Object.keys(questions).length)-1;
+    function question_main(){
+    let structure = format_question(questions[Q_nr][0],questions[Q_nr][1]);
+    document.getElementById("trivia").innerHTML = structure;
+  }
+  question_main();
+</script>
+<style>
+</style>

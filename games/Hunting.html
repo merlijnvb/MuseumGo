@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hunting Game</title>
+    <link rel="stylesheet" href="Hunting.css">
+</head>
+<body>
+  <header>
+        <h1><a href="../MuseumGO.html">MUSEUM GO</a></h1>
+        <a href="../MuseumGO.html#mode1">BACK</a>
+  </header>
+  <section id="page1">
+    <div id="mus_container">
+      <canvas id="museum"></canvas>
+    </div>
+    <div id="phn_container">
+      <section id="phone">
+        <div id="phone-top">
+          <div id="phone-spkr"></div>
+        </div>
+        <div id="phone-mid">
+            <div id="phone-scrn">
+                <div id="phone-content">
+                  <div id="cont_header">
+                    <div id="compas"></div>
+                  </div>
+                  <div id="cont_body">
+                    <table>
+                        <tr>
+                            <td>Points</td>
+                            <td id="pnts"></td>
+                        </tr>
+                        <tr>
+                            <td>Find color: </td>
+                            <td id="objtv"></td>
+                        </tr>
+                        <tr>
+                            <td>distance: </td>
+                            <td id="dist"></td>
+                        </tr>
+                    </table>
+                  </div>
+                  <div id="cont_slot">
+                    <button id="visibility" onclick="visibility()"></button>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div id="phone-bot">
+            <div id="phone-btn">
+            </div>
+        </div>
+
+      </section>
+    </div>
+  </section>
+</body>
+</html>
+
+<script>
+  let canvas = document.getElementById("museum");
+  let ctx = canvas.getContext("2d");
+  let color = "red";
+  let vis = true;
+  const vis_button = document.getElementById('visibility');
+  visibility();
+
+  function make_target(){
+      let targetX = Math.round(Math.random() * canvas.width);
+      let targetY = Math.round(Math.random() * 50) + 50;
+
+      return [targetX,targetY];
+  }
+
+
+  function visibility(){
+    if(vis){
+      vis = false;
+      vis_button.innerText = "TOGGLE OFF";
+      color = "red";
+    }else{
+      vis = true;
+      vis_button.innerText = "TOGGLE ON";
+      color = "rgba(0,0,0,0)";
+    }
+  }
+
+  let [targetX,targetY] = make_target();
+  let score = 0;
+
+  canvas.addEventListener('mousemove', function(event) {
+      let rect = canvas.getBoundingClientRect();
+      let x = (event.clientX - rect.left) * canvas.width/canvas.clientWidth;
+      let y = (event.clientY - rect.top) * canvas.height/canvas.clientHeight;
+      const R = 10;
+
+      if (Math.abs(x - targetX) <= R && Math.abs(y - targetY) <= R){
+          [targetX,targetY] = make_target();
+          score++;
+      }
+
+      // Calculate angle in degrees
+      let angleDeg = Math.atan2(y - targetY, x - targetX) * 180 / Math.PI;
+      let dist = Math.sqrt((targetY - y)**2 + (targetX - x)**2)/10;
+
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Redraw target point
+      ctx.fillStyle = color;
+      ctx.fillRect(targetX-5, targetY-5, 5, 5);
+
+      let arrow = document.getElementById('compas');
+
+      if (arrow) {
+        arrow.style.transform = 'rotate(' + (angleDeg.toFixed(2) - 90 ) + 'deg)';
+      }
+      console.log(y);
+      document.getElementById('pnts').innerHTML = ` ${score}`;
+      document.getElementById('objtv').innerHTML = ` ${color}`;
+      document.getElementById('dist').innerHTML = ` ${dist.toFixed(2)}m`;
+  });
+</script>
