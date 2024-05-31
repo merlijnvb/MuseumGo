@@ -1,0 +1,356 @@
+@import url("Main.css");
+
+header{
+    width: inherit;
+    height: 30%;
+    display: flex;
+}
+header > h1{
+    margin: auto;
+}
+header > a{
+    margin: auto;
+}
+
+#page1{
+    width: inherit;
+    height: 70%;
+    display: flex;
+    justify-content:space-evenly;
+}
+
+#museum{
+    width: 25%;
+    aspect-ratio: 1;
+    /*border: 1px solid black;*/
+    background-image: url("images/vanabbeblueprint.jpg");
+    rotate: 180deg;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#settings{
+    width: 25%;
+    aspect-ratio: 1;
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: auto;
+}
+#set_head{
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    align-content: center;
+    font: var(--main-font-txt-small);
+}
+#set_butt{
+    width: 100%;
+    height: 15%;
+}
+#set_butt > *{
+    width: 50%;
+    height: 100%;
+    font: var(--main-font-txt-small);
+    cursor: pointer;
+    float: left;
+    font-weight: bolder;
+    background-color: unset;
+    border: unset;
+}
+table{
+    height: 70%;
+    width: 100%;
+    text-align: center;
+    font: var(--main-font-txt-small);
+}
+th,td{
+    border-bottom: 1px solid black;
+}
+
+#page2{
+    width: inherit;
+    height: 70%;
+    display: flex;
+}
+#page2 > *{
+    border-radius: 30px;
+    margin: auto;
+    background-color: var(--main-col1);
+    border: 2px solid #ccc;
+    overflow: hidden;
+}
+#page2 > * > *{
+    display: flex;
+}
+#phone-hor-rim{
+    width: 40%;
+    aspect-ratio: 640/310;
+    display: flex;
+}
+#phone-ptr-rim{
+    width: 15%;
+    aspect-ratio: 310/640;
+}
+
+#phone-hor-top{
+    height: 100%;
+    width: 12.5%;
+    display: flex;
+}
+#phone-ptr-top{
+    height: 12.5%;
+    width: 100%;
+    display: flex;
+}
+#phone-hor-mid{
+    height: 100%;
+    width: 75%;
+}
+#phone-ptr-mid{
+    height: 75%;
+    width: 100%;
+}
+#phone-hor-bot{
+    height: 100%;
+    width: 12.5%;
+}
+#phone-ptr-bot{
+    height: 12.5%;
+    width: 100%;
+}
+#phone-hor-spkr{
+    height: 10%;
+    border: 3px solid black;
+    border-radius: 12px;
+    margin: auto;
+}
+#phone-ptr-spkr{
+    height: 10%;
+    aspect-ratio: 50/6;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: auto;
+}
+#phone-hor-spkr{
+    height: 20%;
+    aspect-ratio: 6/50;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: auto;
+}
+#phone-hor-scrn{
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    overflow-y: scroll;
+}
+#phone-hor-scrn::-webkit-scrollbar {
+    display: none;
+}
+#phone-hor-btn{
+    height: 10%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    margin: auto;
+}
+#phone-ptr-scrn{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    overflow-y: scroll;
+}
+#phone-ptr-scrn::-webkit-scrollbar {
+    display: none;
+}
+#phone-ptr-btn{
+    height: 45%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    margin: auto;
+}
+#phone-hor-content{
+    height: 180%;
+    width: 100%;
+    background-color: var(--main-col1);
+    cursor: grab;
+}
+#phone-hor-content:active{
+    cursor: grabbing;
+}
+
+
+#phone-hor-page1{
+    height: 50%;
+    width: 100%;
+    display: flex;
+}
+#phone-hor-p1-img{
+    height: 70%;
+    aspect-ratio: 1;
+    background-image: url("images/vanabbeblueprint.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    rotate: 180deg;
+    margin: auto;
+}
+#phone-hor-p1-tbl{
+    height: 70%;
+    aspect-ratio: 1;
+    border: 1px solid grey;
+    border-radius: 12px;
+    margin: auto;
+    background-image: url("images/table.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#phone-hor-page2{
+    height: 50%;
+    width: 100%;
+    background-color: var(--main-col3);
+    display: flex;
+}
+#phone-hor-p2-box{
+    width: 80%;
+    height: 80%;
+    background-color: var(--main-col1);
+    margin: auto;
+    border-radius: 16px;
+    background-image: url("images/checklist.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#phone-ptr-content{
+    height: 180%;
+    width: 100%;
+    background-color: var(--main-col1);
+    cursor: grab;
+}
+#phone-ptr-content:active{
+    cursor: grabbing;
+}
+#phone-ptr-page1{
+    height: 50%;
+    width: 100%;
+    background-color: var(--main-col3);
+    display: flex;
+}
+
+#phone-ptr-page1 > *{
+    height: 50%;
+    aspect-ratio: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#phone-ptr-p1-img{
+    background-image: url("images/vanabbeblueprint.jpg");
+    visibility: visible;
+    position: unset;
+}
+#phone-ptr-p1-tbl{
+    background-image: url("images/table.png");
+    visibility: hidden;
+    position: absolute;
+}
+
+#phone-ptr-page2{
+    height: 50%;
+    width: 100%;
+    display: flex;
+}
+#phone-ptr-p2-box{
+    height: 50%;
+    aspect-ratio: 1;
+    background-image: url("images/checklist.png");
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+    margin: auto;
+    border: 1px solid var(--main-col3);
+    border-radius: 16px;
+}
+
+/*RESPONSIVENESS*/
+@media screen and (max-width: 320px){
+    #page1{display: grid;}
+    #museum{width: 100%;}
+    #settings{width: 100%;aspect-ratio: 1;}
+    #crowd{width: 70%;}
+    #page2{display: grid;}
+    #phone-hor-rim{width: 85%;}
+    #phone-ptr-rim{width: 50%;}
+}
+
+@media screen and (min-width: 321px) and (max-width: 376px){
+    #page1{display: grid;}
+    #museum{width: 100%;}
+    #settings{width: 100%;aspect-ratio: 1;}
+    #crowd{width: 70%;}
+    #page2{display: grid;}
+    #phone-hor-rim{width: 85%;}
+    #phone-ptr-rim{width: 50%;}
+}
+@media screen and (min-width: 376px) and (max-width: 426px){
+    #page1{display: grid;}
+    #museum{width: 100%;}
+    #settings{width: 100%;aspect-ratio: 1;}
+    #crowd{width: 70%;}
+    #page2{display: grid;}
+    #phone-hor-rim{width: 85%;}
+    #phone-ptr-rim{width: 50%;}
+}
+
+@media screen and (min-width: 426px) and (max-width: 642px){
+    #page1{display: grid;}
+    #museum{width: 100%;}
+    #settings{width: 100%;aspect-ratio: 1;}
+    #crowd{width: 70%;}
+    #page2{display: grid;}
+    #phone-hor-rim{width: 80%;}
+    #phone-ptr-rim{width: 40%;}
+}
+
+@media screen and (min-width: 641px)  and (max-width: 768px){
+    #museum{width: 45%;}
+    #settings{width: 20%;aspect-ratio: 1/2;}
+    #crowd{width: 70%;}
+    #page2{display: grid;}
+    #phone-hor-rim{width: 75%;}
+    #phone-ptr-rim{width: 35%;}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    #museum{width: 50%;}
+    #settings{width: 30%;}
+    #page2{display: grid;}
+    #phone-hor-rim{width: 70%;}
+    #phone-ptr-rim{width: 30%;}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px){
+    #museum{width: 45%;}
+    #settings{width: 35%;}
+    #phone-hor-rim{width: 50%;}
+    #phone-ptr-rim{width: 17%;}
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2560px){
+    #museum{width: 30%;}
+    #settings{width: 30%;}
+}

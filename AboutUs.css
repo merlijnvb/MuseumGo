@@ -1,0 +1,208 @@
+@import url("Main.css");
+
+#page1{
+    height: 50%;
+    width: 80%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    font: var(--main-font-cite);
+    color: var(--txt-top-color);
+    text-shadow: 1px 1px 0 var(--txt-back-color);
+    font-style: oblique;
+}
+
+#page2{
+    height: 20%;
+    width: 100%;
+    display: flex;
+}
+#page2 >*{
+    width: 50%;
+    height: 100%;
+}
+#p2-left{
+    margin-left: calc(25% - 2px);
+    width: calc(25% + 2px);
+    height: 100%;
+    position: relative;
+}
+#p2-right{
+    width: calc(25% + 2px);
+    height: 100%;
+    position: relative;
+}
+
+#p2-left-tr{
+    width: 100%;
+    height: 50%;
+    border-right: 3px solid var(--main-col3);
+}
+#p2-left-br{
+    width: 100%;
+    height: 50%;
+    border-top: 3px solid var(--main-col3);
+    border-left: 4px solid var(--main-col3);
+}
+#p2-right-tl{
+    width: 100%;
+    height: 50%;
+    border-left: 3px solid var(--main-col3);
+}
+#p2-right-bl{
+    height: 50%;
+    border-top: 3px solid var(--main-col3);
+    border-right: 4px solid var(--main-col3);
+}
+
+#page3{
+    width: inherit;
+    height: 30%;
+    display: flex;
+}
+#p3_museum{
+    width: 50%;
+    height: 100%;
+    display: block;
+}
+#p3_visitors{
+    width: 50%;
+    height: 100%;
+    display: block;
+}
+
+#p3_museum_img{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 25%;
+    width: 100%;
+    background-image: url("images/museum.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#p3_visitors_img{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 25%;
+    width: 100%;
+    background-image: url("images/art.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#p3_visitors_boxl,#p3_museum_boxl{
+    height: 50%;
+    width: 100%;
+    display: flex;
+}
+#vis-boxl-l,#mus-boxl-l{
+    width: 50%;
+    height: 100%;
+    border-right: 2px dashed var(--main-col3);
+}
+#vis-boxl-r,#mus-boxl-r{
+    width: 50%;
+    height: 100%;
+    border-left: 2px  dashed var(--main-col3);
+}
+
+#page4{
+    height: 110%;
+    width: inherit;
+    background-color: var(--main-col3);
+}
+#topper{
+    height: 10%;
+    width: inherit;
+    display: flex;
+}
+#topper-left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+#topper-right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+#topper-right-left,#topper-left-left{
+    width: 50%;
+    height: 100%;
+    border-right: 2px  dashed var(--main-col1);
+
+}
+#topper-right-right,#topper-left-right{
+    width: 50%;
+    height: 100%;
+    border-left: 2px  dashed var(--main-col1);
+}
+#cont_slider{
+    width: inherit;
+    height: 40%;
+    display: flex;
+}
+#sldr_mus{
+    width: 50%;
+    height: 100%;
+    display: flex;
+
+}
+#sldr_vis{
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+#slrd_mus_img,#slrd_vis_img{
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+#slrd_mus_img{
+    background-image: url("images/museumfeatures.png");
+}
+#slrd_vis_img{
+    background-image: url("images/visitorsfeatures.png");
+}
+
+
+#content{
+    width: inherit;
+    height: 40%;
+    display: flex;
+}
+#cont_mus,#cont_vis{
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    font: var(--main-font-txt);
+    font-size: 0.9vw;
+    display: flex;
+    text-align: justify;
+}
+#cont_mus > p,#cont_vis > p{
+    margin: auto;
+    color: var(--main-col1);
+    width: 50%;
+}
+#direct{
+    height: 10%;
+    width: 100%;
+    display: flex;
+}
+#direct > *{
+    width: 15%;
+    height: 50%;
+    margin: auto;
+    font: var(--main-font-txt);
+    background-color: var(--main-col1);
+    border: unset;
+    border-radius: 15px;
+    cursor: pointer;
+}

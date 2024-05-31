@@ -1,0 +1,121 @@
+@import url("Main.css");
+
+#page1{
+    width: inherit;
+    height: 60%;
+    display: flex;
+    background-color: var(--main-col3);
+}
+#servey_about{
+    height: 100%;
+    width: 50%;
+    display: grid;
+    text-align: center;
+}
+#servey_about > h1{
+    padding-top: 10%;
+    font: var(--main-font-nav);
+    font-size: 3vw;
+    color: var(--main-col1);
+    background-clip: text;
+    margin: auto;
+    letter-spacing: .1em;
+	text-shadow: 0px 2px 2px rgba(255,255,255,.3), 0px -2px 2px rgba(0,0,0,.7);
+}
+#servey_about > p{
+    padding: 5% 10%;
+    font: var(--main-font-txt);
+    color: var(--main-col1);
+    margin: 0 auto;
+}
+#servey_links{
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+#link{
+    width: 50%;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: auto;
+    cursor: pointer;
+    background-image: url("images/qr_code.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/*#qrcode{*/
+/*    display: flex;*/
+/*    margin: 10% 35%;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*}*/
+/*#qrcode:hover{*/
+/*    cursor: pointer;*/
+/*}*/
+#page2{
+    width: inherit;
+    height: 40%;
+    display: flex;
+}
+#page2 > p{
+    margin: auto;
+    font: var(--main-font-header);
+    color: var(--txt-top-color);
+    text-shadow: 1px 1px 0 var(--txt-back-color);
+    font-style: oblique;
+}
+
+#page3{
+    width: inherit;
+    height: 100%;
+    background-image: url("images/eventsfuture.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#page4{
+    width: inherit;
+    height: 50%;
+    display: flex;
+    text-align: center;
+    background-color: var(--main-col3);
+}
+#page4 > p{
+    margin: auto;
+    font: var(--main-font-cite);
+    color: var(--main-col1);
+    text-shadow: 1px 1px 0 var(--main-col1);
+    font-style: oblique;
+    width: 80%;
+}
+#page5{
+    width: inherit;
+    height: 80%;
+    background-image: url("images/eventsfuture2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/*RESPONSIVENESS*/
+@media screen and (max-width: 320px){
+    #page1{display: grid;}
+    #page1 > *{margin: auto;}
+}
+
+@media screen and (min-width: 321px) and (max-width: 376px){
+    #page1{display: grid;}
+    #page1 > *{margin: auto;}
+}
+@media screen and (min-width: 376px) and (max-width: 426px){
+    #page1{display: grid;}
+    #page1 > *{margin: auto;}
+}
+
+@media screen and (min-width: 426px) and (max-width: 640px){
+    #page1{display: grid;}
+    #page1 > *{margin: auto;}
+}

@@ -1,0 +1,45 @@
+@import url("Main.css");
+
+#page1{
+    width: inherit;
+    height: 70%;
+    display: flex;
+}
+#content-box{
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+    border-radius: 50px;
+    border: 1px solid var(--main-col1);
+    box-shadow: 0 0 5px 2px;
+    transition: box-shadow 200ms;
+}
+#content-box:hover{
+    box-shadow: 0 0 5px 3px;
+}
+#tue{
+    width: 30%;
+    height: 100%;
+    background-image: url("images/tue.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}
+#info{
+    width: 70%;
+    height: 95%;
+    margin: auto;
+    border-left: 1px solid var(--main-col3);
+    display: grid;
+}
+#info > p{
+    font: var(--main-font-nav);
+    width: 90%;
+    text-align: justify;
+    margin: auto;
+}
+#info > p > a{
+    margin-left: 10%;
+}

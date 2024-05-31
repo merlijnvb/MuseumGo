@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum GO</title>
+    <link rel="stylesheet" href="Events.css">
+</head>
+<body>
+    <header>
+        <h1><a href="MuseumGO.html">MUSEUM GO</a></h1>
+        <a href="Events.html">EVENTS</a>
+        <a href="AboutUS.html">ABOUT US</a>
+        <a href="Contact.html">CONTACT</a>
+    </header>
+    <section id="page1">
+        <div id="servey_about">
+            <h1>HELP US IMPROVE!</h1>
+            <p>Click on the QR-code or scan it with your phone to go to our user-interview. We want to gather as much information about our first prototype. What we get out of this project, for us, is that we have a proof of concept and we would appreciate your opinions about it, so we know how to move forward from here.</p>
+        </div>
+        <div id="servey_links">
+            <div id="link" onclick="location.href='https://forms.gle/7irk9Vv2F92eBGdz5';">
+<!--                <iframe id="qrcode" width="100%" height="100%"></iframe>-->
+            </div>
+        </div>
+    </section>
+    <section id="page2">
+        <p>COMING SOON!</p>
+    </section>
+    <section id="page3"></section>
+    <section id="page4">
+        <p>Color in your (virtual) world with unlocking achievements and accomplishing goals. The challenge? Try and experience your local galleries and museums in a different way with Museums Go's A.R. games.</p>
+    </section>
+    <section id="page5"></section>
+</body>
+</html>
+<script>
+    function UpdateQRCode(val="https://forms.gle/7irk9Vv2F92eBGdz5"){
+        document.getElementById("qrcode").setAttribute("src","https://api.mimfa.net/qrcode?value="+encodeURIComponent(val)+"&as=value");
+        }
+        document.addEventListener("DOMContentLoaded", function(){
+            UpdateQRCode(document.getElementById("qrcode").value);
+        });
+
+</script>

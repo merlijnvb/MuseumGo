@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>crowdiness</title>
+    <link rel="stylesheet" href="crowdiness.css">
+</head>
+<body>
+    <header>
+        <h1><a href="MuseumGO.html">MUSEUM GO</a></h1>
+        <a href="AboutUS.html#direct">BACK</a>
+    </header>
+
+    <section id="page1">
+        <canvas id="museum"></canvas>
+        <div id="settings">
+            <div id="set_head">
+                <p>Number of visitors: <span id="visitors" style="visibility: hidden">100</span></p><input type="number" id="crowd" value="100">
+            </div>
+            <table>
+                <tr>
+                    <th>Room #NR</th>
+                    <th>#NR of visitors</th>
+                    <th>crowdedness-score</th>
+                    <th>CO2-score</th>
+                </tr>
+                <tr>
+                    <td>Entree</td>
+                    <td id="room0_vis"></td>
+                    <td id="room0_score"></td>
+                    <td id="room0_co2"></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td id="room1_vis"></td>
+                    <td id="room1_score"></td>
+                    <td id="room1_co2"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="room2_vis"></td>
+                    <td id="room2_score"></td>
+                    <td id="room2_co2"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td id="room3_vis"></td>
+                    <td id="room3_score"></td>
+                    <td id="room3_co2"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td id="room4_vis"></td>
+                    <td id="room4_score"></td>
+                    <td id="room4_co2"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td id="room5_vis"></td>
+                    <td id="room5_score"></td>
+                    <td id="room5_co2"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td id="room6_vis"></td>
+                    <td id="room6_score"></td>
+                    <td id="room6_co2"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td id="room7_vis"></td>
+                    <td id="room7_score"></td>
+                    <td id="room7_co2"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td id="room8_vis"></td>
+                    <td id="room8_score"></td>
+                    <td id="room8_co2"></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td id="room9_vis"></td>
+                    <td id="room9_score"></td>
+                    <td id="room9_co2"></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td id="room10_vis"></td>
+                    <td id="room10_score"></td>
+                    <td id="room10_co2"></td>
+                </tr>
+            </table>
+            <div id="set_butt">
+                <button id="SIM_START" onclick="SIM_START()">START SIM</button>
+                <button id="SIM_STOP" onclick="SIM_STOP()" style="visibility: hidden">STOP SIM</button>
+            </div>
+        </div>
+    </section>
+    <section id="page2">
+        <div id="phone-hor-rim">
+            <div id="phone-hor-top">
+                <div id="phone-hor-spkr"></div>
+            </div>
+            <div id="phone-hor-mid">
+                <div id="phone-hor-scrn">
+                    <div id="phone-hor-content">
+                        <div id="phone-hor-page1">
+                            <div id="phone-hor-p1-img"></div>
+                            <div id="phone-hor-p1-tbl"></div>
+                        </div>
+                        <div id="phone-hor-page2">
+                            <div id="phone-hor-p2-box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="phone-hor-bot">
+                <div id="phone-hor-btn"></div>
+            </div>
+        </div>
+
+        <div id="phone-ptr-rim">
+            <div id="phone-ptr-top">
+                <div id="phone-ptr-spkr"></div>
+            </div>
+            <div id="phone-ptr-mid">
+                <div id="phone-ptr-scrn">
+                    <div id="phone-ptr-content">
+                        <div id="phone-ptr-page1">
+                            <div id="phone-ptr-p1-img" onclick="mapswitch()"></div>
+                            <div id="phone-ptr-p1-tbl" onclick="tblswitch()"></div>
+                        </div>
+                        <div id="phone-ptr-page2">
+                            <div id="phone-ptr-p2-box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="phone-ptr-bot">
+                <div id="phone-ptr-btn"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<script>
+    let mouseDown = false;
+    let startY1, scrollTop1, startY2, scrollTop2;
+    const slider1 = document.getElementById('phone-hor-scrn');
+    const slider2 = document.getElementById('phone-ptr-scrn');
+
+    const startDragging1 = (e) => {
+        mouseDown = true;
+        startY1 = e.pageY - slider1.offsetTop;
+        scrollTop1 = slider1.scrollTop;
+    }
+
+    const stopDragging1 = (e) => {
+        mouseDown = false;
+    }
+
+    const move1 = (e) => {
+        e.preventDefault();
+        if(!mouseDown) { return; }
+        const y1 = e.pageY - slider1.offsetTop;
+        const scroll1 = y1 - startY1;
+        slider1.scrollTop = scrollTop1 - scroll1;
+    }
+
+
+    const startDragging2 = (e) => {
+        mouseDown = true;
+        startY2 = e.pageY - slider2.offsetTop;
+        scrollTop2 = slider2.scrollTop;
+    }
+
+    const stopDragging2 = (e) => {
+        mouseDown = false;
+    }
+
+    const move2 = (e) => {
+        e.preventDefault();
+        if(!mouseDown) { return; }
+        const y2 = e.pageY - slider2.offsetTop;
+        const scroll2 = y2 - startY2;
+        slider2.scrollTop = scrollTop1 - scroll2;
+    }
+
+    // Add the event listeners
+    slider1.addEventListener('mousemove', move1, false);
+    slider1.addEventListener('mousedown', startDragging1, false);
+    slider1.addEventListener('mouseup', stopDragging1, false);
+    slider1.addEventListener('mouseleave', stopDragging1, false);
+    slider2.addEventListener('mousemove', move2, false);
+    slider2.addEventListener('mousedown', startDragging2, false);
+    slider2.addEventListener('mouseup', stopDragging2, false);
+    slider2.addEventListener('mouseleave', stopDragging2, false);
+
+    const Museum_lib = {
+            // place name: [lat, lon]
+            // [4] [5] [6]
+            // [2/3] [7] [8/9]
+            // [1] [entrance] [10]
+            'entrance': [145, 23],
+            'room1': [230, 23],
+            'room2': [240, 65],
+            'room3': [240, 100],
+            'room4':[230, 130],
+            'room5':[145, 130],
+            'room6':[65, 130],
+            'room7':[145,70],
+            'room8':[55, 100],
+            'room9':[55, 65],
+            'room10':[65, 23]
+    };
+    let Museum_rooms = Object.keys(Museum_lib);
+    const input_crowd = document.getElementById("crowd");
+    let Museum_crowd = {};
+    let max_crowd = input_crowd.value;
+    let SIM_ON = false;
+
+    crowd_spreader();
+    let Museum_crowd_keys = Object.keys(Museum_crowd);
+    document.getElementById("crowd").addEventListener("change", (e) =>{max_crowd = e.target.value;crowd_spreader();});
+    function crowd(size){return  Math.round(Math.random() * size/2);}
+
+    function crowd_spreader(){
+        for(let key in Museum_lib){
+            let room_crowd = crowd(max_crowd);
+            max_crowd = max_crowd - room_crowd;
+            if(key == Object.keys(Museum_lib).slice(-1)){room_crowd = max_crowd;}
+
+            Museum_crowd[key] = room_crowd;
+        }
+
+        tableshow();
+    }
+
+    function tableshow(){
+        for(let i = 0 ; i < Object.keys(Museum_crowd).length; i++) {
+            let crowd = Museum_crowd[Museum_rooms[i]];
+            let score = crowd/50;
+            let co2 = ((Math.random() * 9 + 1)/10).toFixed(2);
+            document.getElementById(`room${i}_vis`).innerText = `${crowd}`;
+            document.getElementById(`room${i}_score`).innerText = `${score}`;
+            document.getElementById(`room${i}_co2`).innerText = `${co2}`;
+        }
+    }
+
+    let x = 0;
+
+    function SIM_STOP(){
+        document.getElementById("crowd").style.visibility = "visible";
+        document.getElementById("visitors").style.visibility = "hidden";
+        document.getElementById("SIM_START").style.visibility = "visible";
+        document.getElementById("SIM_STOP").style.visibility = "hidden";
+        SIM_ON = false;
+    }
+
+    function SIM_START(){
+        document.getElementById("crowd").style.visibility = "hidden";
+        document.getElementById("visitors").style.visibility = "visible";
+        document.getElementById("SIM_START").style.visibility = "hidden";
+        document.getElementById("SIM_STOP").style.visibility = "visible";
+        document.getElementById("visitors").innerText = input_crowd.value;
+        SIM_ON = true;
+        SIM();
+    }
+
+    function walkingpaths(pathNr,state=0){
+        let state1,state2,state3;
+
+        switch (state){
+            case 0:
+                state1 = 0;
+                state2 = 1;
+                state3 = -1;
+                break;
+            case 1:
+                state1 = 1;
+                state2 = 0;
+                state3 = -1;
+                break;
+            case 2:
+                state1 = -1;
+                state2 = 1;
+                state3 = 0;
+                break;
+        }
+
+        switch (pathNr){
+            case 0:
+                Museum_crowd[Museum_crowd_keys[0]] += state1;
+                Museum_crowd[Museum_crowd_keys[1]] += state2;
+                Museum_crowd[Museum_crowd_keys[2]] += state3;
+                Museum_crowd[Museum_crowd_keys[3]] += state2;
+                Museum_crowd[Museum_crowd_keys[4]] += state1;
+                Museum_crowd[Museum_crowd_keys[5]] += state2;
+                Museum_crowd[Museum_crowd_keys[6]] += state3;
+                Museum_crowd[Museum_crowd_keys[7]] += state2;
+                Museum_crowd[Museum_crowd_keys[8]] += state1;
+                Museum_crowd[Museum_crowd_keys[9]] += state2;
+                Museum_crowd[Museum_crowd_keys[10]] += state3;
+                break;
+            case 1:
+                Museum_crowd[Museum_crowd_keys[0]] += state3;
+                Museum_crowd[Museum_crowd_keys[1]] += state2;
+                Museum_crowd[Museum_crowd_keys[2]] += state1;
+                Museum_crowd[Museum_crowd_keys[3]] += state2;
+                Museum_crowd[Museum_crowd_keys[4]] += state3;
+                Museum_crowd[Museum_crowd_keys[5]] += state2;
+                Museum_crowd[Museum_crowd_keys[6]] += state1;
+                Museum_crowd[Museum_crowd_keys[7]] += state2;
+                Museum_crowd[Museum_crowd_keys[8]] += state3;
+                Museum_crowd[Museum_crowd_keys[9]] += state2;
+                Museum_crowd[Museum_crowd_keys[10]] += state1;
+                break;
+            case 2:
+                Museum_crowd[Museum_crowd_keys[0]] += state2;
+                Museum_crowd[Museum_crowd_keys[1]] += state3;
+                Museum_crowd[Museum_crowd_keys[2]] += state2;
+                Museum_crowd[Museum_crowd_keys[3]] += state1;
+                Museum_crowd[Museum_crowd_keys[4]] += state2;
+                Museum_crowd[Museum_crowd_keys[5]] += state3;
+                Museum_crowd[Museum_crowd_keys[6]] += state2;
+                Museum_crowd[Museum_crowd_keys[7]] += state1;
+                Museum_crowd[Museum_crowd_keys[8]] += state2;
+                Museum_crowd[Museum_crowd_keys[9]] += state3;
+                Museum_crowd[Museum_crowd_keys[10]] += state2;
+                break;
+        }
+        tableshow();
+
+    }
+
+    function SIM() {
+        if (SIM_ON) {
+            let rnd = Math.round(Math.random() * 3);
+            walkingpaths(rnd, Math.round(Math.random() * 2));
+            mapping();
+            setTimeout(SIM, 1000);
+        }
+    }
+
+
+    let canvas = document.getElementById("museum");
+    let ctx = canvas.getContext("2d");
+    let colour = 'blue';
+
+    function mapping() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let k = 0;
+        for(let key in Museum_crowd){
+            let amount = Museum_crowd[key];
+            let scale = Math.abs(Museum_crowd[key]/50);
+
+            if (amount < 11) {
+                colour = 'rgba(0, 255, 0, 0.75)';
+            }
+            if (amount >= 11 && amount < 21) {
+                colour = 'rgba(255,171,0,0.75)';
+            }
+            if (amount >= 20) {
+                colour = 'rgba(255, 0, 0, 0.75)';
+            }
+            console.log(amount);
+            let cell = Museum_lib[Object.keys(Museum_lib)[k]];
+            const gradient = ctx.createRadialGradient(cell[0]+5, cell[1]+5, 0 ,cell[0]+5, cell[1]+5, 15);
+            gradient.addColorStop(0.15, colour);
+            gradient.addColorStop(0.4, "rgba(255,255,255,0.1)");
+            ctx.fillStyle = gradient;
+            ctx.fillRect(cell[0], cell[1], 10*(1+scale), 10*(1+scale));
+            k++;
+        }
+    }
+    const foto = document.getElementById("phone-ptr-p1-img")
+    const tbl = document.getElementById("phone-ptr-p1-tbl")
+
+    function mapswitch(){
+        foto.style.visibility = 'hidden';
+        foto.style.position = 'absolute';
+        tbl.style.visibility = 'visible';
+        tbl.style.position = 'unset';
+    }
+    function tblswitch(){
+        foto.style.visibility = 'visible';
+        foto.style.position = 'unset';
+        tbl.style.visibility = 'hidden';
+        tbl.style.position = 'absolute';
+    }
+</script>
