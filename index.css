@@ -1,0 +1,345 @@
+  @import url("Main.css");
+
+  .page1{
+    width: inherit;
+    height: 100%;
+  }
+  .page1 > #maps{
+    height: 90%;
+    width: 50%;
+    border: 1px solid var(--main-col1);
+    border-radius: 50px;
+    background-color: var(--main-col1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 50px;
+    position: absolute;
+    box-shadow: 0 0 5px 2px;
+    overflow: hidden;
+    z-index: 1;
+    transition: ease all .2s;
+  }
+  .page1 > #maps:hover{
+    box-shadow: 0 0 5px 3px;
+  }
+  .page1 > #musea{
+    height: 80%;
+    width: 40%;
+    border: 1px solid var(--main-col1);
+    background-color: var(--main-col1);
+    position: absolute;
+    border-radius: 50px;
+    margin-top: 2.5%;
+    margin-left: 50%;
+    box-shadow: 0 0 5px 1px;
+    padding-left: 5%;
+    display: flex;
+    transition: ease all .2s;
+    overflow: hidden;
+    /*overflow-y: scroll;*/
+  }
+  .page1 > #musea:hover{
+    box-shadow: 0 0 5px 3px;
+  }
+  #col1,#col2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mus{
+    height: 40%;
+    aspect-ratio: 1/1;
+    text-align: center;
+    font: var(--main-font-txt-small);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+  .MuseumLogo{
+    height: 30%;
+    aspect-ratio: 1/1;
+    background-image: url("images/android.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .MuseumAbout{
+    height: 70%;
+    width: 80%;
+  }
+  .MuseumAbout > *{
+    margin-top: 2.5%;
+  }
+
+
+
+  .page2{
+    width: inherit;
+    height: 60%;
+    background-color: var(--main-col3);
+    display: grid;
+    align-items: center;
+  }
+  .page2 > h1{
+    color: var(--main-col1);
+    font: var(--main-font-cite);
+    font-style: oblique;
+    text-align: center;
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .page3{
+    height: 120%;
+    width: 100%;
+    background-color: var(--main-col3);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .left{
+    height: 90%;
+    width: 50%;
+    background-color: var(--main-col1);
+    align-self: center;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transform: translateX(-40%);
+    transition: ease all .5s;
+    overflow: hidden;
+  }
+  .left:hover{
+    transform: translateX(0%);
+  }
+  .left:hover ~ .right{
+    transform: translateX(40%);
+  }
+
+  #platform{
+    height: 10%;
+    padding: 5%;
+    display: flex;
+  }
+  #platform > *{
+    height: 100%;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  #platform_android{
+    background-image: url("images/android.png");
+  }
+  #platform_ios{
+    background-image: url("images/ios.png");
+  }
+  #platform_about{
+    height: 60%;
+  }
+  #platform_about > p{
+    padding: 10%;
+    font: var(--main-font-txt-small);
+    text-align: justify;
+    max-height: 100%;
+  }
+  #platform_img{
+    height: 20%;
+    background-image: url("images/crowdmaptel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    rotate: 90deg;
+  }
+
+  .right {
+    height: 80%;
+    width: 90%;
+    background-color: var(--main-col1);
+    align-self: center;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transform: translateX(32%);
+    transition: ease all .5s;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "mode1 mode2 mode3";
+  }
+  .right:hover{
+    transform: translateX(0%);
+  }
+  .right:hover ~ .left{
+    transform: translateX(40%);
+  }
+  #mode1{
+    width: 100%;
+    height: 100%;
+    grid-area: mode1;
+  }
+  #mode2{
+    width: 100%;
+    height: 100%;
+    grid-area: mode2;
+  }
+  #mode3{
+    width: 100%;
+    height: 100%;
+    grid-area: mode3;
+  }
+  .flyer_img{
+    width: 100%;
+    height: 35%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .flyer_info{
+    width: 100%;
+    height: 55%;
+  }
+  .flyer_bt{
+    width: 100%;
+    height: 10%;
+    display: flex;
+  }
+  .flyer_bt > button{
+    margin: auto auto;
+    background-color: var(--main-col1);
+    width: 40%;
+    height: 60%;
+    border: 1px solid var(--main-col1);
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow:  0 0 2px 1px;
+    transition: box-shadow 200ms;
+    font: var(--main-font-txt-small);
+  }
+  .flyer_bt > button:hover{
+    box-shadow: 0 0 2px 2px;
+  }
+  #mode1 > .flyer_img{
+    background-image: url("images/trivia_iphone.png");
+  }
+  #mode2 > .flyer_img{
+    background-image: url("images/hunt_iphone.png");
+  }
+  #mode3 > .flyer_img{
+    background-image: url("images/puzzle_iphone.png");
+  }
+  .flyer_info > p{
+    grid-area: games;
+    display: flex;
+    font: var(--main-font-txt-small);
+    text-align: justify;
+    padding: 20% 10%;
+    height: 100%;
+  }
+
+  /*RESPONSIVENESS*/
+@media screen and (max-width: 320px){
+  .page1 > #maps{height: 40%; width: 70%; margin:0 ; margin-left: 15%;}
+  .page1 > #musea{height: 40%; width: 60%; margin:0 ; margin-left: 17.5%; margin-top: 100%}
+
+  .left{
+    transform: unset;
+    height: 50%;
+    align-self: baseline;
+    margin-top: 10%;
+    width: 80%;
+    position: absolute;
+  }
+  .right{
+    height: 50%;
+    transform: unset;
+    align-self: end;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    position: absolute;
+  }
+  .left:hover ~ .right{transform: unset;}
+  .right:hover ~ .left{transform: unset;}
+}
+@media screen and (min-width: 321px) and (max-width: 376px){
+  .page1 > #maps{height: 40%; width: 70%; margin:0 ; margin-left: 15%;}
+  .page1 > #musea{height: 40%; width: 60%; margin:0 ; margin-left: 17.5%; margin-top: 100%}
+
+  .left{
+    transform: unset;
+    height: 50%;
+    align-self: baseline;
+    margin-top: 10%;
+    width: 80%;
+    position: absolute;
+  }
+  .right{
+    height: 50%;
+    transform: unset;
+    align-self: end;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    position: absolute;
+  }
+  .left:hover ~ .right{transform: unset;}
+  .right:hover ~ .left{transform: unset;}
+}
+@media screen and (min-width: 376px) and (max-width: 426px){
+  .page1 > #maps{height: 40%; width: 70%; margin:0 ; margin-left: 15%;}
+  .page1 > #musea{height: 40%; width: 60%; margin:0 ; margin-left: 17.5%; margin-top: 100%}
+
+  .left{
+    transform: unset;
+    height: 50%;
+    align-self: baseline;
+    margin-top: 10%;
+    width: 80%;
+    position: absolute;
+  }
+  .right{
+    height: 50%;
+    transform: unset;
+    align-self: end;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    position: absolute;
+  }
+  .left:hover ~ .right{transform: unset;}
+  .right:hover ~ .left{transform: unset;}
+}
+@media screen and (min-width: 426px) and (max-width: 640px){
+  .page1 > #maps{height: 40%; width: 70%; margin:0 ; margin-left: 15%;}
+  .page1 > #musea{height: 40%; width: 60%; margin:0 ; margin-left: 17.5%; margin-top: 90%}
+
+
+  .left{
+    transform: unset;
+    height: 50%;
+    align-self: baseline;
+    margin-top: 10%;
+    width: 80%;
+    position: absolute;
+  }
+  .right{
+    height: 50%;
+    transform: unset;
+    align-self: end;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    position: absolute;
+  }
+  .left:hover ~ .right{transform: unset;}
+  .right:hover ~ .left{transform: unset;}
+
+}
+@media screen and (min-width: 641px)  and (max-width: 768px){
+  .page1 > #maps{height: 40%; width: 70%; margin:0 ; margin-left: 15%;}
+  .page1 > #musea{height: 40%; width: 60%; margin:0 ; margin-left: 17.5%; margin-top: 80%}
+}
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  .page1 > #maps{height: 40%; width: 70%; margin:0 ; margin-left: 15%;}
+  .page1 > #musea{height: 40%; width: 60%; margin:0 ; margin-left: 17.5%; margin-top: 70%}
+}
