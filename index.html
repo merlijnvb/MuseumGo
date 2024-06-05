@@ -112,134 +112,16 @@
     <div id="collabs">
       <h1>OUR COLLABORATIONS:</h1>
     </div>
-    <div id="sliders">
-      <div id="slider1a">
-        <div class="slider-top"></div>
-        <div class="slider-top"></div>
-        <div class="slider-top"></div>
-        <div class="slider-top"></div>
-      </div>
-      <div id="slider1b">
-        <div class="slider-top"></div>
-        <div class="slider-top"></div>
-        <div class="slider-top"></div>
-        <div class="slider-top"></div>
-      </div>
-      <div id="slider2a">
-        <div class="slider-bot"></div>
-        <div class="slider-bot"></div>
-        <div class="slider-bot"></div>
-        <div class="slider-bot"></div>
-      </div>
-      <div id="slider2b">
-        <div class="slider-bot"></div>
-        <div class="slider-bot"></div>
-        <div class="slider-bot"></div>
-        <div class="slider-bot"></div>
-      </div>
+    <div class="wrapper">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item4"></div>
+        <div class="item item5"></div>
+        <div class="item item6"></div>
+        <div class="item item7"></div>
+        <div class="item item8"></div>
     </div>
   </section>
 </body>
 </html>
-
-<style>
-  #pagina4{
-    height: 100%;
-    overflow: hidden;
-  }
-  #collabs{
-    display: flex;
-    font: var(--main-font-cite);
-    height: 30%;
-  }
-  #collabs > h1{
-    color: var(--txt-top-color);
-    text-shadow: 2px 2px 0 var(--txt-back-color);
-    margin: auto;
-  }
-  #sliders{
-    height: 70%;
-    display: grid;
-    overflow: hidden;
-  }
-  #sliders > *{
-    height: 30%;
-    width: 100%;
-    margin-left: 100%;
-    position: absolute;
-    display: flex;
-  }
-  #slider2a,#slider2b {
-    margin-top: 15%;
-  }
-
-  .slider-top,.slider-bot{
-    width: 10%;
-    aspect-ratio: 1/1;
-    background-image: url("images/android.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin: auto;
-  }
-
-  @keyframes moveitbaby{
-    0%{margin-left: 100%;}
-    100%{margin-left: -100%;}
-  }
-
-  #slider1a,#slider1b,#slider2a,#slider2b{
-    animation-name: moveitbaby;
-    animation-timing-function: linear;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-  }
-  #slider1b{animation-delay: calc(30s/2);}
-  #slider2a{animation-delay: calc(30s/16)}
-  #slider2b{animation-delay: calc(30s/16 + 30s/2)}
-</style>
-
-<script type="module">
-  import { getAllActivities } from '/website/hotelgrabber.js';
-
-  const activities =  await getAllActivities('eindhoven');
-
-  function html_element(name,score='',about='') {
-    score = Math.floor(Math.random() * 9 + 1);
-    about = 'here is the grabbed general info presented';
-
-    return `<div className='MuseumLogo'></div>\
-            <div className='MuseumAbout'>\
-              <h1><span className='MuseumName'>${name}</span></h1>\
-              <p>Crowdedness-score: ${score}/10</p>\
-              <p>${about}</p>\
-            </div>`
-  }
-
-  const museums_nav1 = document.getElementById('col1');
-  const museums_nav2 = document.getElementById('col2');
-
-  let counter = 0;
-
-  for (let key in activities){
-    let activity;
-
-    try {
-      activity = activities[key].toLowerCase();
-      if (activity.includes('museum')){
-         const mus = document.createElement('div');
-         mus.classList.add('mus');
-         mus.innerHTML = html_element(activity);
-
-       if (counter < 1){
-          museums_nav1.appendChild(mus);
-          counter++;
-        }else{
-          museums_nav2.appendChild(mus);
-          counter = 0;
-        }
-      }
-
-    }catch (error) {console.log(error);}
-    }
-</script>
